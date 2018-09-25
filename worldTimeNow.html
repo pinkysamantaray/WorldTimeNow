@@ -5,8 +5,55 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
-    <h1>Hello Extensions</h1>
+<body class="container">
+    <h4>The current time now is: </h4>
+    <h3 id="timeLabel"></h3>
+
+    <div class="demo-container clocks active bounce">
+        <article class="clock station js-new-york">
+            <section class="label">New York</section>
+            <section class="hours-container">
+            <section class="hours"></section>
+            </section>
+            <section class="minutes-container">
+            <section class="minutes"></section>
+            </section>
+            <section class="seconds-container">
+            <section class="seconds"></section>
+            </section>
+        </article>
+        <article class="clock station js-london">
+            <section class="label">London</section>
+            <section class="hours-container">
+            <section class="hours"></section>
+            </section>
+            <section class="minutes-container">
+            <section class="minutes"></section>
+            </section>
+            <section class="seconds-container">
+            <section class="seconds"></section>
+            </section>
+        </article>
+        <article class="clock station js-tokyo">
+            <section class="label">Tokyo</section>
+            <section class="hours-container">
+            <section class="hours"></section>
+            </section>
+            <section class="minutes-container">
+            <section class="minutes"></section>
+            </section>
+            <section class="seconds-container">
+            <section class="seconds"></section>
+            </section>
+        </article>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/moment-timezone.min.js"></script>
+    <script src="js/moment-timezone-utils.min.js"></script>
+    <script src="js/locales.js"></script>
+    <script src="js/content.js"></script>
 </body>
 
 </html>

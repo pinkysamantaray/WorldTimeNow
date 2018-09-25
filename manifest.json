@@ -1,31 +1,21 @@
 {
-    "name" : "World Time Now",                  //name of your extension
-    "description" : "What's The Time Now!",     // The description of your extension!
-    "author" : "Pinky Samantaray",              // Name of Author
-    "version" : "1.0",                          //version name
-    "manifest_version" : 2,                     //version name of your stable extension
-    "chrome_url_overrides" : {
-      "newtab" : "worldTimeNow.html"
-    },
+    "name" : "World Time Now",                  
+    "description" : "What's The Time Now!",     
+    "author" : "Pinky Samantaray",              
+    "version" : "1.0",                          
+    "manifest_version" : 2,
     "browser_action": {
+        "default_icon": "images/clock_16x16.png",
         "default_popup": "worldTimeNow.html",
-        "default_icon": "images/clock_16x16.png"
-    },
-    "commands": {
-        "_execute_browser_action": {
-            "suggested_key": {
-            "default": "Ctrl+T",
-            "mac": "MacCtrl+T"
-            },
-            "description": "Opens worldTimeNow.html"
-        }
+        "default_title": "Want to check the time?"
     },
     "content_scripts": [
         {
-         "matches": [
-           "<all_urls>"                         //see all match pattern options in the chrome docs
-         ],
-         "js": ["js/jquery-3.3.1.min.js","js/main.js"]
+            "matches": ["<all_urls>"], 
+            "js": ["js/content.js"],            
+            "run_at": "document_end"
         }
-    ]
+    ],    
+    "permissions": ["tabs", "activeTab"]
 }
+
