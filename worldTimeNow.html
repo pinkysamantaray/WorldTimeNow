@@ -6,53 +6,39 @@
 </head>
 
 <body class="container">
-    <h4>The current time now is: </h4>
-    <h3 id="timeLabel"></h3>
 
-    <div class="demo-container clocks active bounce">
-        <article class="clock station js-new-york">
-            <section class="label">New York</section>
-            <section class="hours-container">
-            <section class="hours"></section>
-            </section>
-            <section class="minutes-container">
-            <section class="minutes"></section>
-            </section>
-            <section class="seconds-container">
-            <section class="seconds"></section>
-            </section>
-        </article>
-        <article class="clock station js-london">
-            <section class="label">London</section>
-            <section class="hours-container">
-            <section class="hours"></section>
-            </section>
-            <section class="minutes-container">
-            <section class="minutes"></section>
-            </section>
-            <section class="seconds-container">
-            <section class="seconds"></section>
-            </section>
-        </article>
-        <article class="clock station js-tokyo">
-            <section class="label">Tokyo</section>
-            <section class="hours-container">
-            <section class="hours"></section>
-            </section>
-            <section class="minutes-container">
-            <section class="minutes"></section>
-            </section>
-            <section class="seconds-container">
-            <section class="seconds"></section>
-            </section>
-        </article>
+    <h3>Pick a time zone: </h3>
+    <div>
+        <input id="inputTimeZone" list="timezones" name="inputTimeZone" class="inputTimeZone">
+        <datalist id="timezones">
+            <option class="dlTimeZone">
+        </datalist>
+        <button type="button" class="btn">
+            <span class="addBtn"> + </span> 
+        </button>
     </div>
 
+    <h4>The current time now is: <span id="timeLabel"></span></h4>
+
+    <div class="dial">
+        <div class="dot"></div>
+        <div class="sec-hand"></div>
+        <div class="min-hand"></div>
+        <div class="hour-hand"></div>
+        <span class="twelve">12</span>
+        <span class="three">3</span>
+        <span class="six">6</span>
+        <span class="nine">9</span>
+        <span class="diallines"></span>
+        <div class="date"></div>
+     </div>
+
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/moment-timezone.min.js"></script>
-    <script src="js/moment-timezone-utils.min.js"></script>
-    <script src="js/locales.js"></script>
+    <script src="js/moment_tz_clock/moment.min.js"></script>
+    <script src="js/moment_tz_clock/moment-timezone.min.js"></script>
+    <script src="js/moment_tz_clock/moment-timezone-utils.min.js"></script>
+    <script src="js/moment_tz_clock/moment-timezone-with-data.min.js"></script>
+    <script src="js/moment_tz_clock/locales.js"></script>
     <script src="js/content.js"></script>
 </body>
 

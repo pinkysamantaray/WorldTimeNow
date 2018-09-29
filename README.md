@@ -6,6 +6,10 @@ Install and download [WorldTimeNow](https://chrome.google.com/) at the Chrome We
 WorldTimeNow is a chrome extension that shows you the current time.
 
 Notes: 
+If you want to override new tab,
+    "chrome_url_overrides" : {
+        "newtab" : "newtab.html"
+    },
 If you want to add background script, write this syntax in manifest.json
     "background" : {
         "scripts" : ["js/background.js"]

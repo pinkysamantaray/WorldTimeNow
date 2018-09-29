@@ -10,244 +10,158 @@ body {
     margin: 0;
 }
 
-.demo-container.clocks {
-    padding: 0;
-    width: 100%;
-    height: 75vh;
-    margin: 0;
-    overflow: hidden;
-}
-
-.clock {
-    border-radius: 50%;
-    background: radial-gradient(#000, #000 0.1em, #fff 0.1em, #fff), #fff;
-    display: inline-block;
-    margin: 1%;
-    padding-bottom: 31%;
+.dial {
     position: relative;
-    top: 55%;
-    width: 30%;
-    opacity: 0;
-    transform: translateY(-40%);
-    text-align: center;
-}
-
-.clock.show {
-    opacity: 1;
-    transform: translateY(-50%);
-    transition: all 2.5s 0.5s cubic-bezier(.12,1.03,.34,1);
-}
-
-.clock::after {
-    background: red;
+    width: 150px;
+    height: 150px;
+    background: #ffffff;
+    border: 3px solid #b0bec5;
     border-radius: 50%;
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 4%;
-    height: 4%;
-    z-index: 10;
-}
-
-.minutes-container, .hours-container, .seconds-container {
+    margin: 5px 10px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.55);
+    margin-bottom: 15px;
+ }
+ 
+ span {
+    display: inline-block;
+ }
+ 
+ .dot {
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-}
-
-.hours-container {
-    animation: rotate 43200s infinite linear;
-}
-
-.linear .minutes-container {
-        animation: rotate 3600s infinite linear;
-    }
-.linear .seconds-container {
-        animation: rotate 60s infinite linear;
-    }
-
-.steps .minutes-container {
-        animation: rotate 3600s infinite steps(60);
-    }
-.steps  .seconds-container {
-        animation: rotate 60s infinite steps(60);
-    }
-
-.local.steps .minutes-container {
-        animation: none;
-    }
-
-.bounce .minutes-container {
-        transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
-    }
-.bounce  .seconds-container {
-        transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
-    }
-
-.hours {
-    background: #000;
-    width: 3.5%;
-    height: 40%;
-    position: absolute;
-    left: 48.25%;
-    top: 22%;
-    transform-origin: 50% 71%;
-}
-
-.minutes {
-    background: #000;
-    width: 3.5%;
-    height: 55%;
-    position: absolute;
-    left: 48.25%;
-    top: 7%;
-    transform-origin: 50% 78.5%;
-}
-
-.seconds {
-    background: red;
-    width: 1.5%;
-    height: 42%;
-    position: absolute;
-    left: 49.25%;
-    top: 20%;
-    transform-origin: 50% 71%;
-    z-index: 8;
-}
-
-.label {
-    width: 80px;
-    border-radius: 0.25em;
-    color: #000;
-    font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 0.5em 0.75em 0.25em;
-    position: absolute;
-    top: -4em;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-@keyframes rotate {
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
-
-.clock.station {
-    background: #fff url(//cssanimation.rocks/assets/images/posts/clocks/station_clock.svg) no-repeat center;
-    background-size: 95%;
-    box-shadow: 0 0 0.5em rgba(0,0,0,0.2) inset;
-}
-
-.clock.station .seconds::before {
-    background: red;
+    margin: auto;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    content: "";
+    background: #607D8B;
+    z-index: 10;
+ }
+ 
+ .sec-hand {
     position: absolute;
-    top: -9%;
-    left: -200%;
-    height: 18%;
-    width: 500%;
-}
-
-.clock.ios7 {
-    background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
-    background-size: 88%;
-}
-
-.clock.ios7:before {
-    background: black;
-    border-radius: 50%;
-    content: "";
+    top: 25px;
+    left: 60%;
+    margin-left: -25px;
+    width: 20px;
+    height: 70px;
+    background: url('/images/sec.svg') 50% 50% no-repeat;
+    z-index: 9;
+    transform-origin: 50% 50px;
+ }
+  
+ .min-hand {
     position: absolute;
+    top: 17px;
+    left: 45%;
+    margin-left: 0px;
+    width: 18px;
+    height: 55px;
+    background: url('/images/min.svg') 50% 50% no-repeat;
+    z-index: 7;
+    transform-origin: 50% 55px;
+ }
+ 
+ .hour-hand {
+    position: absolute;
+    top: 27px;
+    left: 52%;
+    margin-left: 0px;
+    width: 10px;
+    height: 40px;
+    background: url('/images/hour.svg') 50% 50% no-repeat;
+    z-index: 5;
+    transform-origin: 50% 50px;
+ }
+  
+ .twelve,
+ .three,
+ .six,
+ .nine {
+    position: absolute;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    color: #777;
+    font-weight: 700;
+ }
+ 
+ .twelve {
+    top: 20px;
+    left: 68px;
+ }
+ 
+ .three {
+    top: 70px;
+    right: 25px;
+ }
+ 
+ .six {
+    left: 70px;
+    bottom: 20px;
+ }
+ 
+ .nine {
+    top: 68px;
+    left: 21px;
+ }
+ 
+ .diallines {
+    position: absolute;
+    top: 5px;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 6%;
-    height: 6%;
-    z-index: 0;
-}
+    margin-left: -2px;
+    width: 1px;
+    height: 8px;
+    background: #FB8C00;
+    z-index: 1;
+    transform-origin: 50% 70px;
+ }
+ 
+ .diallines:nth-of-type(5n) {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -2px;
+    width: 2px;
+    height: 12px;
+    background: #2196F3;
+    z-index: 1;
+    transform-origin: 50% 70px;
+ }
+ 
+ .date {
+    position: absolute;
+    top: 88px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    background: #9e9e9e;
+    border-radius: 6px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,.3), inset 0 -2px 2px 0 rgba(255,255,255,.2);
+ }
 
-.clock.ios7:after {
-    width: 2%;
-    height: 2%;
-}
+ .addBtn {
+     font-weight: 600;
+ }
 
-.clock.ios7 .seconds {
-    border-radius: 200%/10%;
-    height: 30%;
-    left: 49.5%;
-    top: 20%;
-    width: 1%;
-    transform-origin: 50% 100%;
-}
+ .btn {
+    border-radius: 50%;
+    font-size: 18px;
+    background: #fff;
+    border: 1px solid #a0a0a0;
+ }
 
-.clock.ios7 .minutes {
-    border-radius: 150%/10%;
-    width: 2%;
-    height: 35%;
-    left: 49%;
-    top: 15%;
-    transform-origin: 50% 100%;
-}
-
-.clock.ios7 .hours {
-    border-radius: 85%/10%;
-    width: 2%;
-    height: 20%;
-    left: 49%;
-    top: 30%;
-    transform-origin: 50% 100%;
-}
-
-
-.clock.simple {
-    background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
-    background-size: 88%;
-}
-
-.clock.simple:after {
-    background-color: #000;
-    width: 5%;
-    height: 5%;
-}
-
-.clock.simple .seconds {
-    background-color: #000;
-    height: 45%;
-    left: 49.5%;
-    top: 14%;
-    width: 1%;
-    transform-origin: 50% 80%;
-}
-
-.clock.simple .minutes {
-    width: 2%;
-    height: 40%;
-    left: 49%;
-    top: 10%;
-    transform-origin: 50% 100%;
-}
-
-.clock.simple .hours {
-    width: 2.5%;
-    height: 20%;
-    left: 48.75%;
-    top: 30%;
-    transform-origin: 50% 100%;
-}
-
-.hours.angled {
-    transform: rotateZ(-40deg);
-}
-
-.minutes.angled {
-    transform: rotateZ(40deg);
-}
+ .inputTimeZone {
+    border: 1px solid #a0a0a0;
+    height: 25px;
+    width: 60vw;
+    border-radius: 5px;
+ }
