@@ -9,6 +9,11 @@
         "default_popup": "worldTimeNow.html",
         "default_title": "Want to check the time?"
     },
+    "icons": { 
+        "16": "images/clock_16x16.png",
+        "48": "images/clock_32x32.png",
+       "128": "images/clock_128x128.png" 
+    },
     "content_scripts": [
         {
             "matches": ["<all_urls>"], 
@@ -16,7 +21,7 @@
             "run_at": "document_end"
         }
     ],    
-    "permissions": ["tabs", "activeTab"],
+    "permissions": ["activeTab"],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
 
