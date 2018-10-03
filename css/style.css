@@ -54,9 +54,9 @@ body {
   
  .min-hand {
     position: absolute;
-    top: 17px;
+    top: 21px;
     left: 45%;
-    margin-left: 0px;
+    margin-left: -2px;
     width: 18px;
     height: 55px;
     background: url('/images/min.svg') 50% 50% no-repeat;
@@ -66,14 +66,14 @@ body {
  
  .hour-hand {
     position: absolute;
-    top: 27px;
-    left: 52%;
-    margin-left: 0px;
+    top: 35px;
+    left: 35%;
+    margin-left: 15px;
     width: 10px;
     height: 40px;
     background: url('/images/hour.svg') 50% 50% no-repeat;
     z-index: 5;
-    transform-origin: 50% 50px;
+    transform-origin: 50% 40px;
  }
   
  .twelve,
