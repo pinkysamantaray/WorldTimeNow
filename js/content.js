@@ -7,6 +7,9 @@
 //     }
 // });
 
+console.log(window);
+console.log(chrome);
+
 $(document).ready(function() {
     
     var timezones = moment.tz.names();

@@ -17,7 +17,13 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"], 
-            "js": ["js/content.js"],            
+            "js": [
+                "js/jquery-3.3.1.min.js", 
+                "js/moment_tz_clock/moment.min.js", 
+                "js/moment_tz_clock/moment-timezone.min.js",
+                "js/moment_tz_clock/moment-timezone-utils.min.js",
+                "js/moment_tz_clock/moment-timezone-with-data.min.js",
+                "js/content.js"],            
             "run_at": "document_end"
         }
     ], 
